@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Collector : MonoBehaviour
 {
 
+    [SerializeField] Transform _finishTarget;
+    bool _isShootingAllowed;
     C_GameManager gameManager;
 
     private void Start()
@@ -13,6 +16,18 @@ public class Collector : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (_isShootingAllowed)
+        {
+           // ShootCollectibles();
+        }
+        else
+        {
+            return;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
@@ -20,6 +35,12 @@ public class Collector : MonoBehaviour
             gameManager.CollectedList.Add(other.gameObject);
             other.tag = "Collected";
 
+        }
+
+        if (other.CompareTag("Finish"))
+        {
+            _isShootingAllowed = true;
+           
         }
     }
 
@@ -34,19 +55,23 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Finish"))
-        {
-            ShootCollectibles();
-        }
+
     }
 
     void ShootCollectibles()
     {
         if (gameManager.CollectedList.Count > 0)
         {
-            gameManager.CollectedList[0].GetComponent<Rigidbody>().AddForce((Vector3.forward * 300f + Vector3.up * 50f) * Time.fixedDeltaTime, ForceMode.Impulse);
-            gameManager.CollectedList.RemoveAt(0);
+            StartCoroutine(ShootingRoutine());
         }
 
+    }
+
+    IEnumerator ShootingRoutine()
+    {
+        gameManager.CollectedList[0].GetComponent<Rigidbody>().isKinematic = true;
+        Tween moveTween = gameManager.CollectedList[0].transform.DOMove(_finishTarget.position, .5f, false);
+        yield return  moveTween.WaitForCompletion();
+        gameManager.CollectedList.Remove(gameManager.CollectedList[0]);
     }
 }

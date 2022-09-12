@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Finisher : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class Finisher : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
-            gameManager.CollectedCount++;
+            
             collision.gameObject.tag = "Fired";
+            collision.transform.DOKill();
+            gameManager.CollectedCount++;
             gameManager.CheckLevelSuccess();
         }
     }

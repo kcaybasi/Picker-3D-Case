@@ -94,7 +94,7 @@ public class C_GameManager : MonoBehaviour
     {
         if (CollectedList.Count == 0)
         {
-            Debug.Log("eter");
+          
             if (_collectedCount >= _requiredCollectible)
             {
                // Debug.Log("Game success");
