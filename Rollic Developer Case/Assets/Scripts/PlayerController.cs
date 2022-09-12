@@ -10,34 +10,52 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _forwardSpeed;
     [SerializeField] float _sideSpeed;
 
-    Vector3 _refCurrentVel;
+    bool _isMovementAllowed;
+    Rigidbody _rigidbody;
     Vector3 _movementVector;
     Touch touch;
 
     private void Start()
     {
-        
+        //Components
+        _rigidbody = GetComponent<Rigidbody>();
+
+        //Events
+        C_GameManager.OnGameStarted += C_GameManager_OnGameStarted;
+
     }
+
+    private void C_GameManager_OnGameStarted()
+    {
+        _isMovementAllowed = true;
+    }
+
     private void FixedUpdate()
     {
-        GetComponent<Rigidbody>().velocity = _movementVector * Time.fixedDeltaTime * 100f;
+        if (_isMovementAllowed)
+        {
+            _rigidbody.velocity = _movementVector * Time.fixedDeltaTime * 100f;
+        }
+        
     }
     private void Update()
     {
         //GetTouchInput();
         //DetermineSideMovement();
-        DetermineSideMovementForKeyboard();
-        Move();
+        if (_isMovementAllowed)
+        {
+            DetermineSideMovementForKeyboard();
+            Move();
+        }
+
       //  ClampPosAtX();
     }
 
     void Move()
     {
-       
         _movementVector.y = 0f;
         _movementVector.z = _forwardSpeed;
-       // transform.position = Vector3.SmoothDamp(transform.position, transform.position + _movementVector * Time.deltaTime, ref _refCurrentVel, Time.deltaTime);
-    
+
     }
 
 
@@ -91,5 +109,19 @@ public class PlayerController : MonoBehaviour
         Vector3 _clampPos = transform.position;
         _clampPos.x = Mathf.Clamp(_clampPos.x, -3.7f, 3.7f);
         transform.position = _clampPos;
+    }
+
+    private void OnDestroy()
+    {
+        C_GameManager.OnGameStarted -= C_GameManager_OnGameStarted;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            _rigidbody.isKinematic = true;
+            _isMovementAllowed = false;
+        }
     }
 }
