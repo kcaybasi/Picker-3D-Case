@@ -1506,6 +1506,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1714315985}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1098342006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098342007}
+  - component: {fileID: 1098342008}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098342007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098342006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098342008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098342006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ebbcf90067e4a4587a0a65fd6861b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1110632567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1159966458530419351, guid: 968556f807a0e624ca85fafc2173aea6,
@@ -2884,8 +2927,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0899117, y: 1.4045329, z: 2.7887995}
-  m_Center: {x: 1.0220613, y: 0.5772666, z: 0.6453036}
+  m_Size: {x: 0.25332168, y: 1.4033136, z: 2.2151816}
+  m_Center: {x: 1.1037661, y: 0.57665694, z: 0.35849464}
 --- !u!54 &9090551512051682087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2898,10 +2941,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Constraints: 116
+  m_CollisionDetection: 2
 --- !u!114 &9090551512051682088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,7 +2958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 5
-  _sideSpeed: 10
+  _sideSpeed: 5
 --- !u!65 &9090551512051682089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2927,8 +2970,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11446476, y: 0.99165964, z: 2.9333086}
-  m_Center: {x: -1.0059311, y: 0.37082994, z: 0.5848336}
+  m_Size: {x: 0.28547025, y: 1.7334604, z: 2.5614195}
+  m_Center: {x: -1.0914339, y: 0.74173033, z: 0.39888906}
 --- !u!65 &9090551512051682090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2940,5 +2983,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0603518, y: 1.4656041, z: 0.19482231}
-  m_Center: {x: -0.044359684, y: 0.60780215, z: -0.78876877}
+  m_Size: {x: 2.0603518, y: 1.5874224, z: 0.19482231}
+  m_Center: {x: -0.044359725, y: 0.6687113, z: -0.78876877}

@@ -14,13 +14,21 @@ public class PlayerController : MonoBehaviour
     Vector3 _movementVector;
     Touch touch;
 
+    private void Start()
+    {
+        
+    }
+    private void FixedUpdate()
+    {
+        GetComponent<Rigidbody>().velocity = _movementVector * Time.fixedDeltaTime * 100f;
+    }
     private void Update()
     {
         //GetTouchInput();
         //DetermineSideMovement();
         DetermineSideMovementForKeyboard();
         Move();
-        ClampPosAtX();
+      //  ClampPosAtX();
     }
 
     void Move()
@@ -28,7 +36,7 @@ public class PlayerController : MonoBehaviour
        
         _movementVector.y = 0f;
         _movementVector.z = _forwardSpeed;
-        transform.position = Vector3.SmoothDamp(transform.position, transform.position + _movementVector * Time.deltaTime, ref _refCurrentVel, Time.deltaTime);
+       // transform.position = Vector3.SmoothDamp(transform.position, transform.position + _movementVector * Time.deltaTime, ref _refCurrentVel, Time.deltaTime);
     
     }
 
