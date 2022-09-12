@@ -1111,7 +1111,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9245283, g: 0.88591766, b: 0.78061587, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3534,13 +3534,13 @@ GameObject:
   - component: {fileID: 8755246534310976963}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &8755246534310976963
-MeshCollider:
+--- !u!65 &8755246534310976963
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3549,10 +3549,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: 24955874b74303543b7005f3ece51393, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 7.544462, y: 0.28807607, z: 7.544464}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9090551512051682085
 GameObject:
   m_ObjectHideFlags: 0

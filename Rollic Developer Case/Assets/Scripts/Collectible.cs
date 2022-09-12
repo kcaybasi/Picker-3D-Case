@@ -8,7 +8,7 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Finish"))
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.forward * Time.fixedDeltaTime * 300f,ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce((Vector3.forward*300f+Vector3.up*50f) * Time.fixedDeltaTime ,ForceMode.Impulse);
         }
     }
 }
