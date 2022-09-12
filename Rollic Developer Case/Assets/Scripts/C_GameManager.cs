@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class C_GameManager : MonoBehaviour
 {
+  
+    
+    #region Singleton
+
+    public static C_GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType(typeof(C_GameManager)) as C_GameManager;
+
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
+    private static C_GameManager instance;
+    #endregion
+
+
+    [Header("Level Parameters")]
+
+    [SerializeField] int _requiredCollectible;
+    [SerializeField] int _collectedCount;
+    [SerializeField] List<GameObject> _collectedList;
+
 
     [Header("UI")]
 
     [SerializeField] GameObject _startMenu;
+    [SerializeField] GameObject _gameOverMenu;
+    [SerializeField] GameObject _gamsSuccessMenu;
 
     public enum GameState { Start,Gameplay,GameOver}
     GameState _gameState;
     public GameState CurrenGameState { get => _gameState; set => _gameState = value; }
-
+    public int RequiredCollectible { get => _requiredCollectible; set => _requiredCollectible = value; }
+    public List<GameObject> CollectedList { get => _collectedList; set => _collectedList = value; }
+    public int CollectedCount { get => _collectedCount; set => _collectedCount = value; }
 
     public delegate void GameAction();
     public static event GameAction OnGameStarted;
@@ -58,5 +90,20 @@ public class C_GameManager : MonoBehaviour
         _menu.SetActive(false);
     }
 
-
+    public void CheckLevelSuccess()
+    {
+        if (CollectedList.Count == 0)
+        {
+            Debug.Log("eter");
+            if (_collectedCount >= _requiredCollectible)
+            {
+               // Debug.Log("Game success");
+            }
+            else
+            {
+               // Debug.Log("Game over");
+            }
+        }
+  
+    }
 }
