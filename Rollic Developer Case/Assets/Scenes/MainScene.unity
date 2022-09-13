@@ -3584,7 +3584,7 @@ GameObject:
   - component: {fileID: 8755246534310976963}
   - component: {fileID: 8755246534310976964}
   m_Layer: 0
-  m_Name: Finisher
+  m_Name: Target
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

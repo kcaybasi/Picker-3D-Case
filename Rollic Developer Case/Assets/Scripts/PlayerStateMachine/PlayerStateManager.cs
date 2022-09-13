@@ -14,6 +14,7 @@ public class PlayerStateManager : MonoBehaviour
     // Components
 
     Rigidbody _rigidbody;
+    Collector _collector;
 
     // Movement 
 
@@ -23,6 +24,9 @@ public class PlayerStateManager : MonoBehaviour
 
     // Getters & Setters
     public PlayerBaseState CurrentState { get => _currentState; set => _currentState = value; }
+    public Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    public Collector Collector { get => _collector; set => _collector = value; }
+
     private void Awake()
     {
         // Assign first state
@@ -33,7 +37,8 @@ public class PlayerStateManager : MonoBehaviour
 
         // Get components
 
-        _rigidbody = GetComponent<Rigidbody>();
+        Rigidbody = GetComponent<Rigidbody>();
+        Collector = GetComponent<Collector>();
 
         // Assign movement vector
 
@@ -82,7 +87,7 @@ public class PlayerStateManager : MonoBehaviour
     public void Move()
     {
         CalculateSideMovementVector();
-        _rigidbody.velocity = _movementVector * Time.fixedDeltaTime * 100f;
+        Rigidbody.velocity = _movementVector * Time.fixedDeltaTime * 100f;
     }
 
     #endregion

@@ -30,7 +30,10 @@ public class PlayerMovementState : PlayerBaseState
 
     public override void OnTriggerEnter(Collider collider)
     {
-       
+        if (collider.CompareTag("Finish"))
+        {
+            SwitchState(_factory.GameSuccess());
+        }
     }
 
     public override void UpdateState()

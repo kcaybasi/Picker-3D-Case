@@ -5,42 +5,20 @@ using DG.Tweening;
 
 public class Collector : MonoBehaviour
 {
-
+    List<GameObject> _collectedObjectList = new List<GameObject>();
     [SerializeField] Transform _finishTarget;
     bool _isShootingAllowed;
-    UIManager gameManager;
 
-    private void Start()
-    {
-        
-    }
+    public List<GameObject> CollectedObjectList { get => _collectedObjectList; set => _collectedObjectList = value; }
 
 
-    private void Update()
-    {
-        if (_isShootingAllowed)
-        {
-           // ShootCollectibles();
-        }
-        else
-        {
-            return;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectible"))
         {
-           
+            CollectedObjectList.Add(other.gameObject);
             other.tag = "Collected";
-
-        }
-
-        if (other.CompareTag("Finish"))
-        {
-            _isShootingAllowed = true;
-           
         }
     }
 
@@ -48,14 +26,10 @@ public class Collector : MonoBehaviour
     {
         if (other.CompareTag("Collected"))
         {
-          
+            CollectedObjectList.Remove(other.gameObject);
             other.tag = "Collectible";
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-
-    }
-
+ 
 }
