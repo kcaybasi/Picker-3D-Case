@@ -6,11 +6,11 @@ using DG.Tweening;
 public class Finisher : MonoBehaviour
 {
 
-    C_GameManager gameManager;
+   
 
     private void Start()
     {
-        gameManager = C_GameManager.Instance;
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,8 +20,7 @@ public class Finisher : MonoBehaviour
             
             collision.gameObject.tag = "Fired";
             collision.transform.DOKill();
-            gameManager.CollectedCount++;
-            gameManager.CheckLevelSuccess();
+    
         }
     }
 

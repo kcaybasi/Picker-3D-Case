@@ -3462,7 +3462,7 @@ PrefabInstance:
     - target: {fileID: 8109850926782478886, guid: 63ddc3bddab66544e949d3599311f3e6,
         type: 3}
       propertyPath: m_Name
-      value: GameManager
+      value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 8109850926782478887, guid: 63ddc3bddab66544e949d3599311f3e6,
         type: 3}
@@ -3532,6 +3532,26 @@ PrefabInstance:
     - target: {fileID: 8109850926782478888, guid: 63ddc3bddab66544e949d3599311f3e6,
         type: 3}
       propertyPath: _gamsSuccessMenu
+      value: 
+      objectReference: {fileID: 285639159}
+    - target: {fileID: 8109850926782478888, guid: 63ddc3bddab66544e949d3599311f3e6,
+        type: 3}
+      propertyPath: _menuList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109850926782478888, guid: 63ddc3bddab66544e949d3599311f3e6,
+        type: 3}
+      propertyPath: _menuList.Array.data[0]
+      value: 
+      objectReference: {fileID: 755440300}
+    - target: {fileID: 8109850926782478888, guid: 63ddc3bddab66544e949d3599311f3e6,
+        type: 3}
+      propertyPath: _menuList.Array.data[1]
+      value: 
+      objectReference: {fileID: 734735683}
+    - target: {fileID: 8109850926782478888, guid: 63ddc3bddab66544e949d3599311f3e6,
+        type: 3}
+      propertyPath: _menuList.Array.data[2]
       value: 
       objectReference: {fileID: 285639159}
     m_RemovedComponents: []
@@ -3606,13 +3626,13 @@ GameObject:
   - component: {fileID: 8512515667833328900}
   - component: {fileID: 6393685757864735652}
   - component: {fileID: 575839578055200547}
-  - component: {fileID: 9090551512051682088}
   - component: {fileID: 9090551512051682092}
   - component: {fileID: 9090551512051682087}
   - component: {fileID: 9090551512051682090}
   - component: {fileID: 9090551512051682089}
   - component: {fileID: 9090551512051682086}
   - component: {fileID: 9090551512051682091}
+  - component: {fileID: 9090551512051682093}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3649,20 +3669,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &9090551512051682088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9090551512051682085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bc98e33255675458398bd84f5e9509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _forwardSpeed: 5
-  _sideSpeed: 5
 --- !u!65 &9090551512051682089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3709,9 +3715,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090551512051682085}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100e15249d82b8c4a95354345d84d47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _finishTarget: {fileID: 519828393912258297}
+--- !u!114 &9090551512051682093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090551512051682085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8f7f583bfebba40b7c094d8505be78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forwardSpeed: 5
+  _sideSpeed: 5

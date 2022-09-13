@@ -8,11 +8,11 @@ public class Collector : MonoBehaviour
 
     [SerializeField] Transform _finishTarget;
     bool _isShootingAllowed;
-    C_GameManager gameManager;
+    UIManager gameManager;
 
     private void Start()
     {
-        gameManager = C_GameManager.Instance;
+        
     }
 
 
@@ -32,7 +32,7 @@ public class Collector : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
-            gameManager.CollectedList.Add(other.gameObject);
+           
             other.tag = "Collected";
 
         }
@@ -48,7 +48,7 @@ public class Collector : MonoBehaviour
     {
         if (other.CompareTag("Collected"))
         {
-            gameManager.CollectedList.Remove(other.gameObject);
+          
             other.tag = "Collectible";
         }
     }
@@ -58,20 +58,4 @@ public class Collector : MonoBehaviour
 
     }
 
-    void ShootCollectibles()
-    {
-        if (gameManager.CollectedList.Count > 0)
-        {
-            StartCoroutine(ShootingRoutine());
-        }
-
-    }
-
-    IEnumerator ShootingRoutine()
-    {
-        gameManager.CollectedList[0].GetComponent<Rigidbody>().isKinematic = true;
-        Tween moveTween = gameManager.CollectedList[0].transform.DOMove(_finishTarget.position, .5f, false);
-        yield return  moveTween.WaitForCompletion();
-        gameManager.CollectedList.Remove(gameManager.CollectedList[0]);
-    }
 }
