@@ -15,6 +15,7 @@ public class PlayerStateManager : MonoBehaviour
 
     Rigidbody _rigidbody;
     Collector _collector;
+    Counter _counter;
 
     // Movement 
 
@@ -26,8 +27,7 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerBaseState CurrentState { get => _currentState; set => _currentState = value; }
     public Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
     public Collector Collector { get => _collector; set => _collector = value; }
-
-    
+    public Counter Counter { get => _counter; set => _counter = value; }
 
     private void Awake()
     {

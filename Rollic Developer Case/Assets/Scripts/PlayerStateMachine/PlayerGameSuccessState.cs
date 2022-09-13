@@ -17,7 +17,7 @@ public class PlayerGameSuccessState : PlayerBaseState
 
     public override void EnterState()
     {
-
+        Debug.Log("Success");
     }
 
     public override void ExitState()

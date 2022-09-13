@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] CounterData counterData;
+    public CounterData counterData;
 }
