@@ -2744,9 +2744,10 @@ GameObject:
   - component: {fileID: 1882477769}
   - component: {fileID: 1882477768}
   - component: {fileID: 1882477772}
+  - component: {fileID: 1882477773}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Finish
+  m_TagString: Counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2839,6 +2840,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1882477773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882477767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865a3bcfb7d48854f91cd0b7dbc349d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterData: {fileID: 11400000, guid: dff5f6b8b4ad15e469e8dc09f1b27e78, type: 2}
 --- !u!1 &1909816936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,14 +3166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 285639159, guid: e0e38fc962c000c4bb9a4fa07bfa8c0e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734735683, guid: e0e38fc962c000c4bb9a4fa07bfa8c0e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 466521430314347915, guid: e0e38fc962c000c4bb9a4fa07bfa8c0e,
         type: 3}
       propertyPath: m_Name
@@ -3626,13 +3632,13 @@ GameObject:
   - component: {fileID: 8512515667833328900}
   - component: {fileID: 6393685757864735652}
   - component: {fileID: 575839578055200547}
-  - component: {fileID: 9090551512051682092}
   - component: {fileID: 9090551512051682087}
   - component: {fileID: 9090551512051682090}
   - component: {fileID: 9090551512051682089}
   - component: {fileID: 9090551512051682086}
   - component: {fileID: 9090551512051682091}
   - component: {fileID: 9090551512051682093}
+  - component: {fileID: 9090551512051682092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged

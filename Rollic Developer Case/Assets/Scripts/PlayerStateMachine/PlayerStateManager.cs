@@ -27,6 +27,8 @@ public class PlayerStateManager : MonoBehaviour
     public Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
     public Collector Collector { get => _collector; set => _collector = value; }
 
+    
+
     private void Awake()
     {
         // Assign first state
