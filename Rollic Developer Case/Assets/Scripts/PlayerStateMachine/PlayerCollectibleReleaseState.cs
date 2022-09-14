@@ -16,11 +16,11 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
     public override void EnterState()
     {
         _requiredCollectible = _ctx.Counter.CounterData.RequiredCollectible;
-        _collectedCount = _ctx.Counter.CounterData.HittedObjectCount;
+        _collectedCount = _ctx.Collector.CollectedObjectList.Count;
         _ctx.Rigidbody.isKinematic = true;
         for (int i = 0; i < _ctx.Collector.CollectedObjectList.Count; i++)
         {
-            //_ctx.Collector.CollectedObjectList[i].GetComponent<Rigidbody>().AddForce((Vector3.forward * 100f+ Vector3.up * 35f) * Time.fixedDeltaTime, ForceMode.Impulse);
+
             _ctx.Collector.CollectedObjectList[i].transform.DOMove(_ctx.Counter.transform.parent.position, .15f+_delayIncrement);
             _delayIncrement += 0.05f;
            

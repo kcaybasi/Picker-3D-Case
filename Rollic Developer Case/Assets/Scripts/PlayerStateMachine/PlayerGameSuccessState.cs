@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerGameSuccessState : PlayerBaseState
 {
@@ -17,7 +18,17 @@ public class PlayerGameSuccessState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("Success");
+        Debug.Log("heye");
+       
+        if (_ctx.Counter.CounterData.CounterType == CounterData.CounterTypes.Regular)
+        {
+            _ctx.Counter.transform.DOMoveY(-4f, .5f);
+
+        }
+        else
+        {
+
+        }
     }
 
     public override void ExitState()
