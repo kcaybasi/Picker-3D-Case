@@ -30,9 +30,9 @@ public class PlayerMovementState : PlayerBaseState
 
     public override void OnTriggerEnter(Collider collider)
     {
-        if (collider.CompareTag("Counter"))
+        if (collider.CompareTag("CounterTrigger"))
         {
-            _ctx.Counter = collider.GetComponent<Counter>();
+            _ctx.Counter = collider.transform.parent.GetComponent<Counter>();
             SwitchState(_factory.Release());
         }
     }

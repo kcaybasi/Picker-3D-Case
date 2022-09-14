@@ -16,6 +16,10 @@ public class CounterData : ScriptableObject
     int _requiredCollectible;
 
     [SerializeField]
+
+    int _hittedObjectCount;
+
+    [SerializeField]
     public enum CounterTypes { Regular, Finisher }
 
     [SerializeField]
@@ -24,4 +28,5 @@ public class CounterData : ScriptableObject
 
     public CounterTypes CounterType { get => _counterType; set => _counterType = value; }
     public int RequiredCollectible { get => _requiredCollectible; set => _requiredCollectible = value; }
+    public int HittedObjectCount { get => _hittedObjectCount; set => _hittedObjectCount = value; }
 }
