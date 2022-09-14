@@ -32,9 +32,9 @@ public class PlayerStateFactory
         return new PlayerGameFailState(_context, this);
     }
 
-    public PlayerBaseState BallRelease()
+    public PlayerBaseState Release()
     {
-        return new PlayerBallReleaseState(_context, this);
+        return new PlayerCollectibleReleaseState(_context, this);
     }
 
 }

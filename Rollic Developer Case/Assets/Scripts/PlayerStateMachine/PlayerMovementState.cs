@@ -33,7 +33,7 @@ public class PlayerMovementState : PlayerBaseState
         if (collider.CompareTag("Counter"))
         {
             _ctx.Counter = collider.GetComponent<Counter>();
-            SwitchState(_factory.BallRelease());
+            SwitchState(_factory.Release());
         }
     }
 
