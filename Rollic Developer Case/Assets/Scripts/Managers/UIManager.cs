@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +26,11 @@ public class UIManager : MonoBehaviour
     #endregion
 
 
+
+    int _buildIndex;
+    int _levelNo;
+    [SerializeField] TextMeshProUGUI _levelText;
+
     [SerializeField] List<GameObject> _menuList = new List<GameObject>();
 
     private void Awake()
@@ -39,8 +46,13 @@ public class UIManager : MonoBehaviour
 
         }
 
-        Application.targetFrameRate = 60;
-        QualitySettings.vSyncCount = 0;
+
+
+        // Set Level Text
+
+        _buildIndex = SceneManager.GetActiveScene().buildIndex;
+        _levelNo = _buildIndex + 1;
+        _levelText.text = "LEVEL " + _levelNo;
  
     }
 
@@ -62,5 +74,21 @@ public class UIManager : MonoBehaviour
     {
         _menuList[_menuNo].SetActive(false);
     }
-  
+
+    #region Button Functions
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(_buildIndex+1);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(_buildIndex);
+    }
+
+
+    #endregion
+
+
 }

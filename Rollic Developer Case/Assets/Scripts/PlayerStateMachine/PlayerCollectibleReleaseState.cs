@@ -34,14 +34,11 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
         if (areAllCollectiblesSent())
         {
             if (isRequiredCollectiblesCollected())
-            {
-                
+            {               
                 if (isLastCollectibleReached())
                 {
                     SwitchState(_factory.GameSuccess());
-                }
-                
-
+                }                
             }
             else
             {
