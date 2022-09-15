@@ -29,6 +29,7 @@ public class PlayerGameSuccessState : PlayerBaseState
         }
         else
         {
+            _ctx.Counter.SuccessParticle.Play();
             UIManager.Instance.OpenMenu(2);
         }
     }
@@ -57,7 +58,8 @@ public class PlayerGameSuccessState : PlayerBaseState
 
     IEnumerator CounterRoutine()
     {
-        _ctx.Counter.transform.DOMoveY(-4f, 2.5f);
+        _ctx.Counter.SuccessParticle.Play();
+        _ctx.Counter.transform.DOMoveY(-4f, 4f);
         MeshRenderer meshRenderer = _ctx.Counter.GetComponent<MeshRenderer>();
         meshRenderer.material.DOColor(_ctx.CounterTargetColor, 1.5f);
         yield return new WaitForSeconds(.75f);

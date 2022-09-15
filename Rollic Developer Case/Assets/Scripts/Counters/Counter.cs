@@ -9,12 +9,14 @@ public class Counter : MonoBehaviour
     [SerializeField] CounterData _counterData;
     [SerializeField] TextMeshProUGUI _counterText;  
     [SerializeField] ParticleSystem _hitParticle;
+    [SerializeField] ParticleSystem _successParticle;
     [SerializeField] Transform _collectibleTargetTransform;
 
     int _hittedObjectCount;
     public CounterData CounterData { get => _counterData; }
     public int HittedObjectCount { get => _hittedObjectCount; }
     public Transform CollectibleTargetTransform { get => _collectibleTargetTransform; }
+    public ParticleSystem SuccessParticle { get => _successParticle; }
 
     private void Start()
     {

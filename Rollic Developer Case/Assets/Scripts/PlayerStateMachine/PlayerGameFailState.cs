@@ -15,7 +15,7 @@ public class PlayerGameFailState : PlayerBaseState
 
     public override void EnterState()
     {
-        UIManager.Instance.OpenMenu(1);
+        _ctx.StartCoroutine(FailRoutine());
     }
 
     public override void ExitState()
@@ -36,5 +36,11 @@ public class PlayerGameFailState : PlayerBaseState
     public override void UpdateState()
     {
         
+    }
+
+    IEnumerator FailRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        UIManager.Instance.OpenMenu(1);
     }
 }
