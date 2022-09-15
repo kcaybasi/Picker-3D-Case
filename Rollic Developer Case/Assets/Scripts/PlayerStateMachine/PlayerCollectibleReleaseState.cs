@@ -35,7 +35,6 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
         }
     }
 
-
     public override void CheckSwitchStates()
     {
         if (_ctx.Collector.CollectedObjectList.Count == 0)
