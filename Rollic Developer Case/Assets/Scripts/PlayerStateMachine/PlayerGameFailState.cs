@@ -15,7 +15,7 @@ public class PlayerGameFailState : PlayerBaseState
 
     public override void EnterState()
     {
-       
+        UIManager.Instance.OpenMenu(1);
     }
 
     public override void ExitState()

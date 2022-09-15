@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class Collector : MonoBehaviour
 {
-    List<GameObject> _collectedObjectList = new List<GameObject>();
+    [SerializeField] List<GameObject> _collectedObjectList = new List<GameObject>();
     [SerializeField] Transform _finishTarget;
     bool _isShootingAllowed;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class Counter : MonoBehaviour
 {
@@ -34,10 +35,12 @@ public class Counter : MonoBehaviour
                 _hitParticle.Play();
             }
 
-            Destroy(collision.gameObject, 1f);
+            DOTween.Kill(collision.gameObject.transform);
+            Destroy(collision.gameObject);
 
         }
- 
+
     }
+
 
 }

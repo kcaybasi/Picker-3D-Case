@@ -26,10 +26,11 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
 
         for (int i = 0; i < _ctx.Collector.CollectedObjectList.Count; i++)
         {
-
             var _collectibleObj = _ctx.Collector.CollectedObjectList[i].transform;
+            
+            
             _collectibleObj.DOMove(_ctx.Counter.CollectibleTargetTransform.position, .15f+_delayIncrement);            
-            _delayIncrement += 0.05f;
+            _delayIncrement += 0.025f;
            
         }
     }
