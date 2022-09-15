@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7961079978248828276}
   - component: {fileID: 1858227067319925230}
   - component: {fileID: 1858227067319925225}
-  - component: {fileID: 1858227067319925224}
   m_Layer: 0
   m_Name: TriPrism
   m_TagString: Collectible
@@ -112,16 +111,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1858227067319925224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858227067319925227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb36681ae1f37749a6eed1a50593b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collectibleData: {fileID: 11400000, guid: 07e03d7e3ed97744280354836008628a, type: 2}
