@@ -7684,7 +7684,7 @@ GameObject:
   - component: {fileID: 9090551512051682092}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7770,7 +7770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collectedObjectList: []
-  _finishTarget: {fileID: 0}
 --- !u!114 &9090551512051682093
 MonoBehaviour:
   m_ObjectHideFlags: 0

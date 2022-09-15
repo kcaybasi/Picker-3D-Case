@@ -6,8 +6,7 @@ using DG.Tweening;
 public class Collector : MonoBehaviour
 {
     [SerializeField] List<GameObject> _collectedObjectList = new List<GameObject>();
-    [SerializeField] Transform _finishTarget;
-    bool _isShootingAllowed;
+    
 
     public List<GameObject> CollectedObjectList { get => _collectedObjectList; set => _collectedObjectList = value; }
 
@@ -31,5 +30,6 @@ public class Collector : MonoBehaviour
         }
     }
 
+  
  
 }
