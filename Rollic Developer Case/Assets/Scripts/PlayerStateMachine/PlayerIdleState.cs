@@ -25,12 +25,6 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
-
-        if (Input.GetKey(KeyCode.K))
-        {
-            SwitchState(_factory.Movement());
-        }
-
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);

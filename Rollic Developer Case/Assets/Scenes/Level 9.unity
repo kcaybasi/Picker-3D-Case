@@ -14516,6 +14516,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f7f583bfebba40b7c094d8505be78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardSpeed: 5
-  _sideSpeed: 5
   _platformColor: {fileID: 2100000, guid: f51c8021504794b46840ce2df88a7448, type: 2}
