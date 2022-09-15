@@ -16,6 +16,7 @@ public class PlayerMovementState : PlayerBaseState
     public override void EnterState()
     {
         UIManager.Instance.CloseMenu(0);
+        _ctx.Rigidbody.isKinematic = false;
     }
 
     public override void ExitState()
@@ -32,6 +33,7 @@ public class PlayerMovementState : PlayerBaseState
     {
         if (collider.CompareTag("CounterTrigger"))
         {
+            collider.enabled = false;
             _ctx.Counter = collider.transform.parent.GetComponent<Counter>();
             SwitchState(_factory.Release());
         }

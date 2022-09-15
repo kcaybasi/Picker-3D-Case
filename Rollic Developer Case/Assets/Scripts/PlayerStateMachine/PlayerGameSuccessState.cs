@@ -18,11 +18,13 @@ public class PlayerGameSuccessState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("heye");
+        
        
         if (_ctx.Counter.CounterData.CounterType == CounterData.CounterTypes.Regular)
         {
-            _ctx.Counter.transform.DOMoveY(-4f, .5f);
+
+            _ctx.StartCoroutine(CounterRoutine());
+          
 
         }
         else
@@ -49,5 +51,16 @@ public class PlayerGameSuccessState : PlayerBaseState
     public override void UpdateState()
     {
         
+    }
+
+
+
+    IEnumerator CounterRoutine()
+    {
+        _ctx.Counter.transform.DOMoveY(-4f, 2.5f);
+        MeshRenderer meshRenderer = _ctx.Counter.GetComponent<MeshRenderer>();
+        meshRenderer.material.DOColor(_ctx.CounterTargetColor, 1.5f);
+        yield return new WaitForSeconds(.75f);
+        SwitchState(_factory.Movement());
     }
 }

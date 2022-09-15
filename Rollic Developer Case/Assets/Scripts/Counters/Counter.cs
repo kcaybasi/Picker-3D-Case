@@ -9,26 +9,27 @@ public class Counter : MonoBehaviour
     [SerializeField] TextMeshProUGUI _counterText;
     [SerializeField] CounterData _counterData;
     [SerializeField] ParticleSystem _hitParticle;
-
+    int _hittedObjectCount;
     public CounterData CounterData { get => _counterData; }
+    public int HittedObjectCount { get => _hittedObjectCount; }
 
-    private void Start()
-    {
-        CounterData.HittedObjectCount = 0;
-    }
+ 
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
-            _counterText.text = CounterData.HittedObjectCount + "/" + CounterData.RequiredCollectible;
-            CounterData.HittedObjectCount++;
+            _counterText.text = _hittedObjectCount + "/" + CounterData.RequiredCollectible;
+            _hittedObjectCount++;
             if (!_hitParticle.isPlaying)
             {
                 _hitParticle.Play();
             }
 
-            Destroy(collision.gameObject, .5f);
+            Destroy(collision.gameObject, 1f);
+
         }
+ 
     }
+
 }

@@ -17,17 +17,25 @@ public class PlayerStateManager : MonoBehaviour
     Collector _collector;
     Counter _counter;
 
-    // Movement 
+    [Header("Movement Parameters")]
 
     Vector3 _movementVector;
     [SerializeField] float _forwardSpeed;
     [SerializeField] float _sideSpeed;
+
+    [Header("Counter Routine")]
+
+    [SerializeField] Material _platformColor;
+    Color _counterTargetColor;
+
+
 
     // Getters & Setters
     public PlayerBaseState CurrentState { get => _currentState; set => _currentState = value; }
     public Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
     public Collector Collector { get => _collector; set => _collector = value; }
     public Counter Counter { get => _counter; set => _counter = value; }
+    public Color CounterTargetColor { get => _counterTargetColor;  }
 
     private void Awake()
     {
@@ -45,6 +53,10 @@ public class PlayerStateManager : MonoBehaviour
         // Assign movement vector
 
         DetermineMovementVector();
+
+        // Assign counter color to platform color
+
+        _counterTargetColor = _platformColor.color;
     }
 
     void Update()
@@ -93,4 +105,7 @@ public class PlayerStateManager : MonoBehaviour
     }
 
     #endregion
+
+
+
 }
