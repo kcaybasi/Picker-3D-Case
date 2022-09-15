@@ -30,8 +30,9 @@ public class Counter : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
-            _counterText.text = _hittedObjectCount + "/" + CounterData.RequiredCollectible;
             _hittedObjectCount++;
+            _counterText.text = _hittedObjectCount + "/" + CounterData.RequiredCollectible;
+            
             if (!_hitParticle.isPlaying)
             {
                 _hitParticle.Play();

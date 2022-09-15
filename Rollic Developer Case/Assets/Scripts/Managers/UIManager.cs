@@ -88,7 +88,15 @@ public class UIManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(_buildIndex+1);
+        if (C_GameManager.Instance.LevelCompleteCount < 10)
+        {
+            SceneManager.LoadScene(_buildIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(Random.Range(0, 9));
+        }
+        
     }
 
     public void RestartLevel()

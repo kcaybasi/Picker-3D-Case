@@ -20,8 +20,8 @@ public class PlayerStateManager : MonoBehaviour
     [Header("Movement Parameters")]
 
     Vector3 _movementVector;
-    [SerializeField] float _forwardSpeed;
-    [SerializeField] float _sideSpeed;
+    float _forwardSpeed=5f;
+    float _sideSpeed=3f;
     Touch touch;
 
     [Header("Counter Routine")]
@@ -83,33 +83,26 @@ public class PlayerStateManager : MonoBehaviour
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
-            if (touch.deltaPosition.x > 0)
+            if (touch.phase == TouchPhase.Moved)
             {
-                _movementVector.x = _sideSpeed;
+                if (touch.deltaPosition.x > 0)
+                {
+                    _movementVector.x = _sideSpeed;
+                }
+                else if (touch.deltaPosition.x < 0)
+                {
+                    _movementVector.x = _sideSpeed * -1f;
+                }
             }
-            else if (touch.deltaPosition.x < 0)
-            {
-                _movementVector.x = _sideSpeed * -1f;
-            }
-            else if (touch.deltaPosition.x == 0)
+            else
             {
                 _movementVector.x = 0;
             }
-            
+
+
         }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            _movementVector.x = _sideSpeed;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            _movementVector.x = _sideSpeed * -1f;
-        }
-        else
-        {
-            _movementVector.x = 0f;
-        }
+
     }
 
     void DetermineMovementVector()

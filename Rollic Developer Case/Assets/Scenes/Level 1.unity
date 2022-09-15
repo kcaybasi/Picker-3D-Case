@@ -13406,5 +13406,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 5
-  _sideSpeed: 5
+  _sideSpeed: 3.5
   _platformColor: {fileID: 2100000, guid: f51c8021504794b46840ce2df88a7448, type: 2}
