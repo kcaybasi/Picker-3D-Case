@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("LevelCompleteCount"))
         {
-            _levelNo = C_GameManager.Instance.LevelCompleteCount;
+            _levelNo = C_GameManager.Instance.LevelCompleteCount+1;
         }
         else
         {
@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        if (C_GameManager.Instance.LevelCompleteCount < 10)
+        if (C_GameManager.Instance.LevelCompleteCount < 9)
         {
             SceneManager.LoadScene(_buildIndex + 1);
         }
