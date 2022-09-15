@@ -22,6 +22,7 @@ public class PlayerStateManager : MonoBehaviour
     Vector3 _movementVector;
     [SerializeField] float _forwardSpeed;
     [SerializeField] float _sideSpeed;
+    Touch touch;
 
     [Header("Counter Routine")]
 
@@ -78,6 +79,25 @@ public class PlayerStateManager : MonoBehaviour
 
     public void CalculateSideMovementVector()
     {
+
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+            if (touch.deltaPosition.x > 0)
+            {
+                _movementVector.x = _sideSpeed;
+            }
+            else if (touch.deltaPosition.x < 0)
+            {
+                _movementVector.x = _sideSpeed * -1f;
+            }
+            else if (touch.deltaPosition.x == 0)
+            {
+                _movementVector.x = 0;
+            }
+            
+        }
+
         if (Input.GetKey(KeyCode.D))
         {
             _movementVector.x = _sideSpeed;

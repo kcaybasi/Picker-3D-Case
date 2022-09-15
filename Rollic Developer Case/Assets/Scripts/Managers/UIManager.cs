@@ -51,7 +51,16 @@ public class UIManager : MonoBehaviour
         // Set Level Text
 
         _buildIndex = SceneManager.GetActiveScene().buildIndex;
-        _levelNo = _buildIndex + 1;
+
+        if (PlayerPrefs.HasKey("LevelCompleteCount"))
+        {
+            _levelNo = C_GameManager.Instance.LevelCompleteCount;
+        }
+        else
+        {
+            _levelNo = 1;
+        }
+        
         _levelText.text = "LEVEL " + _levelNo;
  
     }

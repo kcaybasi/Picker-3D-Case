@@ -9597,6 +9597,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 118804983074161876, guid: 543febc059798de45bfda53fc37f9ed7,
+        type: 3}
+      propertyPath: _counterData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c88a5f72c8b2fe44859013d5cf57cb5,
+        type: 2}
     - target: {fileID: 118804983074161877, guid: 543febc059798de45bfda53fc37f9ed7,
         type: 3}
       propertyPath: m_RootOrder

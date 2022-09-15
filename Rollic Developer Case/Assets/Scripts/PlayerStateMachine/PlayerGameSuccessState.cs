@@ -31,6 +31,7 @@ public class PlayerGameSuccessState : PlayerBaseState
         {
             _ctx.Counter.SuccessParticle.Play();
             UIManager.Instance.OpenMenu(2);
+            C_GameManager.Instance.SaveLevelProgress();
         }
     }
 
