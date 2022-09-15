@@ -20,7 +20,7 @@ public class PlayerStateManager : MonoBehaviour
     [Header("Movement Parameters")]
 
     Vector3 _movementVector;
-    float _forwardSpeed=5f;
+    float _forwardSpeed=3f;
     float _sideSpeed=3f;
     Touch touch;
 
