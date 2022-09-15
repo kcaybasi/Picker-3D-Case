@@ -29,7 +29,7 @@ public class PlayerGameSuccessState : PlayerBaseState
         }
         else
         {
-
+            UIManager.Instance.OpenMenu(2);
         }
     }
 

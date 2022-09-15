@@ -28,7 +28,7 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
         {
 
             var _collectibleObj = _ctx.Collector.CollectedObjectList[i].transform;
-            _collectibleObj.DOMove(_ctx.Counter.transform.parent.position, .15f+_delayIncrement);            
+            _collectibleObj.DOMove(_ctx.Counter.CollectibleTargetTransform.position, .15f+_delayIncrement);            
             _delayIncrement += 0.05f;
            
         }
@@ -41,7 +41,7 @@ public class PlayerCollectibleReleaseState : PlayerBaseState
         {
             if (_collectedCount >= _requiredCollectible)
             {
-                float _lastCollectibleDistance = Vector3.Distance(_lastCollectible.transform.position, _ctx.Counter.transform.parent.position);
+                float _lastCollectibleDistance = Vector3.Distance(_lastCollectible.transform.position, _ctx.Counter.CollectibleTargetTransform.position);
 
                 if ((_lastCollectibleDistance) <= 2f)
                 {
