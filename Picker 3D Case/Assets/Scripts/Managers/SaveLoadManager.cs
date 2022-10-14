@@ -9,20 +9,14 @@ public class SaveLoadManager : MonoBehaviour
     private int currentSceneIndex;
     private int sceneToContinue;
 
-
-
     private void Awake()
     {
-        DontDestroyOnLoad(this.transform.gameObject);
-      
+        DontDestroyOnLoad(this.transform.gameObject);    
     }
     void Start()
-    {
-       
+    {      
         ContinueGame();
-
     }
-
 
     private void ContinueGame()
     {
