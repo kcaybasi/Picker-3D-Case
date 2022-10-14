@@ -24,7 +24,6 @@ public class Counter : MonoBehaviour
         _counterText.text = _hittedObjectCount + "/" + CounterData.RequiredCollectible;
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Collectible"))
