@@ -21,7 +21,6 @@ public class Counter : MonoBehaviour
     private void Start()
     {
         // To update counter text at beginning
-
         _counterText.text = _hittedObjectCount + "/" + CounterData.RequiredCollectible;
     }
 
@@ -40,11 +39,6 @@ public class Counter : MonoBehaviour
 
             DOTween.Kill(collision.gameObject.transform);
             Destroy(collision.gameObject);
-
         }
-
     }
-
-
-
 }
