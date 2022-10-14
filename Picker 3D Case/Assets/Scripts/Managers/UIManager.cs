@@ -25,8 +25,6 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     #endregion
 
-
-
     int _buildIndex;
     int _levelNo;
     [SerializeField] TextMeshProUGUI _levelText;
@@ -45,8 +43,6 @@ public class UIManager : MonoBehaviour
             instance = this;
 
         }
-
-
 
         // Set Level Text
 
@@ -95,8 +91,7 @@ public class UIManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene(Random.Range(0, 9));
-        }
-        
+        }     
     }
 
     public void RestartLevel()
@@ -104,8 +99,5 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(_buildIndex);
     }
 
-
     #endregion
-
-
 }
