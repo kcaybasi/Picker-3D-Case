@@ -15,8 +15,6 @@ public class CounterData : ScriptableObject
 
     int _requiredCollectible;
 
-
-
     [SerializeField]
     public enum CounterTypes { Regular, Finisher }
 
