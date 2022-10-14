@@ -22,10 +22,7 @@ public class PlayerGameSuccessState : PlayerBaseState
        
         if (_ctx.Counter.CounterData.CounterType == CounterData.CounterTypes.Regular)
         {
-
             _ctx.StartCoroutine(CounterRoutine());
-          
-
         }
         else
         {
