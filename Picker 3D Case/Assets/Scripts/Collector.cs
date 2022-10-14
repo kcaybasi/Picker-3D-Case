@@ -6,11 +6,7 @@ using DG.Tweening;
 public class Collector : MonoBehaviour
 {
     [SerializeField] List<GameObject> _collectedObjectList = new List<GameObject>();
-    
-
     public List<GameObject> CollectedObjectList { get => _collectedObjectList; set => _collectedObjectList = value; }
-
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +16,6 @@ public class Collector : MonoBehaviour
             other.tag = "Collected";
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Collected"))
@@ -29,7 +24,4 @@ public class Collector : MonoBehaviour
             other.tag = "Collectible";
         }
     }
-
-  
- 
 }
